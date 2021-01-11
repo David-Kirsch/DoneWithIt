@@ -1,35 +1,41 @@
 import React from "react";
-import { Button, Image, StyleSheet, View } from "react-native";
+import { Button, Image, StatusBar, StyleSheet, View } from "react-native";
+import colors from "../config/colors";
 
 function ViewImageScreen(props) {
   return (
-    <View>
-      <View style={styles.delete} />
-      <View style={styles.close} />
+    <View style={styles.container}>
+      <View style={styles.closeIcon} />
+      <View style={styles.deleteIcon} />
       <Image style={styles.photo} source={require("../assets/chair.jpg")} />
     </View>
   );
 }
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: colors.black,
+    flex: 1,
+  },
   photo: {
-    backgroundColor: "black",
     height: "100%",
     width: "100%",
     resizeMode: "contain",
   },
-  close: {
-    width: 100,
-    height: 100,
-    color: "green",
+  closeIcon: {
+    width: 50,
+    height: 50,
+    backgroundColor: colors.primary,
     position: "absolute",
-    top: 150,
+    top: 40,
+    left: 30,
   },
-  delete: {
-    width: 100,
-    height: 100,
-    color: "red",
+  deleteIcon: {
+    width: 50,
+    height: 50,
+    backgroundColor: colors.secondary,
     position: "absolute",
-    top: 150,
+    top: 40,
+    right: 30,
   },
 });
 
